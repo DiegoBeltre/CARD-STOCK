@@ -5,18 +5,16 @@ from scrapers.walmart import WalmartScraper
 
 BASE_DIR = Path(__file__).resolve().parent
 search_query = "pokemon cards"
-refresh_interval = 10  # seconds between reloads
+refresh_interval = 10  
 output_file = BASE_DIR / "walmart_products.txt"
 cache_file = BASE_DIR / "walmart_products_prev.json"
 
-# Add more site scrapers here.
 SCRAPERS = {
     "walmart": WalmartScraper,
 }
 
 target_site = "walmart"
 
-# Change this to a different site when you add another scraper.
 target_site = "walmart"
 
 proxy_server = None
