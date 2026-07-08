@@ -1,8 +1,6 @@
-2026/07/07-17:56:40.738 a70 Reusing MANIFEST D:\CODEING\POKEPING\walmart_profile\Default\Local Storage\leveldb/MANIFEST-000001
-2026/07/07-17:56:40.752 a70 Recovering log #4
-2026/07/07-17:56:40.753 a70 Level-0 table #7: started
-2026/07/07-17:56:40.782 a70 Level-0 table #7: 52039 bytes OK
-2026/07/07-17:56:40.828 a70 Delete type=0 #4
-2026/07/07-17:57:40.862 7d30 Level-0 table #10: started
-2026/07/07-17:57:40.876 7d30 Level-0 table #10: 146383 bytes OK
-2026/07/07-17:57:40.878 7d30 Delete type=0 #8
+2026/07/07-18:20:29.648 2d4c Reusing MANIFEST D:\CODEING\POKEPING\walmart_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/07/07-18:20:29.654 2d4c Recovering log #9
+2026/07/07-18:20:29.657 2d4c Reusing old log D:\CODEING\POKEPING\walmart_profile\Default\Local Storage\leveldb/000009.log 
+2026/07/07-18:21:29.683 6fb8 Level-0 table #13: started
+2026/07/07-18:21:29.721 6fb8 Level-0 table #13: 152225 bytes OK
+2026/07/07-18:21:29.724 6fb8 Delete type=0 #9

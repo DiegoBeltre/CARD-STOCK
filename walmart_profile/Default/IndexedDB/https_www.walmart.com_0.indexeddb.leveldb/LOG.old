@@ -1,2 +1,3 @@
-2026/07/07-17:44:17.193 6f2c Creating DB D:\CODEING\POKEPING\walmart_profile\Default\IndexedDB\https_www.walmart.com_0.indexeddb.leveldb since it was missing.
-2026/07/07-17:44:17.213 6f2c Reusing MANIFEST D:\CODEING\POKEPING\walmart_profile\Default\IndexedDB\https_www.walmart.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/07-17:56:44.159 7884 Reusing MANIFEST D:\CODEING\POKEPING\walmart_profile\Default\IndexedDB\https_www.walmart.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/07/07-17:56:44.160 7884 Recovering log #3
+2026/07/07-17:56:44.160 7884 Reusing old log D:\CODEING\POKEPING\walmart_profile\Default\IndexedDB\https_www.walmart.com_0.indexeddb.leveldb/000003.log 

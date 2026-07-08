@@ -1,3 +1,6 @@
-2026/07/07-17:56:40.839 7d30 Reusing MANIFEST D:\CODEING\POKEPING\walmart_profile\Default\Session Storage/MANIFEST-000001
-2026/07/07-17:56:40.845 7d30 Recovering log #3
-2026/07/07-17:56:40.848 7d30 Reusing old log D:\CODEING\POKEPING\walmart_profile\Default\Session Storage/000003.log 
+2026/07/07-18:20:29.736 2d4c Reusing MANIFEST D:\CODEING\POKEPING\walmart_profile\Default\Session Storage/MANIFEST-000001
+2026/07/07-18:20:29.742 2d4c Recovering log #3
+2026/07/07-18:20:29.748 2d4c Reusing old log D:\CODEING\POKEPING\walmart_profile\Default\Session Storage/000003.log 
+2026/07/07-18:21:32.645 6fb8 Level-0 table #5: started
+2026/07/07-18:21:32.650 6fb8 Level-0 table #5: 25297 bytes OK
+2026/07/07-18:21:32.652 6fb8 Delete type=0 #3
