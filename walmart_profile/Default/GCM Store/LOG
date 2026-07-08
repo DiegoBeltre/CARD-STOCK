@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 2026/07/07-18:04:12.675 266c Creating DB C:\Users\kaifm\CARD-STOCK\walmart_profile\Default\GCM Store since it was missing.
 2026/07/07-18:04:12.679 266c Reusing MANIFEST C:\Users\kaifm\CARD-STOCK\walmart_profile\Default\GCM Store/MANIFEST-000001
+=======
+2026/07/07-19:10:37.379 57a4 Reusing MANIFEST D:\CODEING\POKEPING\walmart_profile\Default\GCM Store/MANIFEST-000001
+2026/07/07-19:10:37.380 57a4 Recovering log #3
+2026/07/07-19:10:37.381 57a4 Reusing old log D:\CODEING\POKEPING\walmart_profile\Default\GCM Store/000003.log 
+>>>>>>> 79bba10759765293e848c968e48c52a7ab7d06cd

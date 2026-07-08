@@ -1,109 +1,35 @@
-from playwright.sync_api import sync_playwright, TimeoutError
+﻿from urllib.parse import quote_plus
+from .base_scraper import BaseScraper
 
 
-class WalmartScraper:
+class WalmartScraper(BaseScraper):
+    SEARCH_URL = "https://www.walmart.com/search/?query={query}&page={page}"
+    PRODUCT_CARD_SELECTOR = "[data-item-id]"
+    TITLE_SELECTOR = "[data-automation-id='product-title']"
+    PRICE_SELECTOR = "[data-automation-id='product-price']"
+    IMAGE_SELECTOR = "img"
+    URL_SELECTOR = "a"
+    BLOCKED_URL_PREFIX = "https://www.walmart.com/blocked"
 
-    BASE_URL = "https://www.walmart.com/search?q={}"
-
-    def __init__(self, headless=False):
-
-        self.current_query = None
-        self.current_url = None
-
-        self.playwright = sync_playwright().start()
-
-        self.context = self.playwright.chromium.launch_persistent_context(
-            user_data_dir="./walmart_profile",
-            headless=headless,
-            viewport={"width": 1920, "height": 1080},
-            locale="en-US"
+    def _build_search_url(self, page: int) -> str:
+        return self.SEARCH_URL.format(
+            query=quote_plus(self.current_query),
+            page=page,
         )
-
-        self.page = self.context.new_page()
-
-
-    def search(self, query: str) -> bool:
-
-        self.current_query = query
-        self.current_url = self.BASE_URL.format(
-            query.replace(" ", "+")
-        )
-
-        return self._load_page(self.current_url)
-    
-
-    def refresh(self) -> bool:
-
-        if self.current_url is None:
-            raise RuntimeError("No search has been performed yet.")
-
-        return self._load_page(self.current_url)
 
     def _load_page(self, url: str) -> bool:
-
-        self.page.goto(
-            url,
-            wait_until="domcontentloaded"
-        )
-
-        try:
-
-            self.page.wait_for_selector(
-                "[data-item-id]",
-                timeout=15000
-            )
-
-            return True
-
-        except TimeoutError:
-
-            print("Couldn't find product cards.")
+        if not super()._load_page(url):
             return False
 
-    def get_products(self):
+        if self.page.url.startswith(self.BLOCKED_URL_PREFIX):
+            print("Walmart blocked the request. Please wait or try a different session.")
+            return False
 
-        cards = self.page.locator("[data-item-id]")
+        return True
 
-        products = []
-
-        for i in range(cards.count()):
-
-            card = cards.nth(i)
-
-            try:
-
-                title = card.locator(
-                    "[data-automation-id='product-title']"
-                ).inner_text()
-
-                price = card.locator(
-                    "[data-automation-id='product-price']"
-                ).inner_text()
-
-                image = card.locator(
-                    "img"
-                ).first.get_attribute("src")
-
-                url = card.locator(
-                    "a"
-                ).first.get_attribute("href")
-
-                if url and url.startswith("/"):
-                    url = "https://www.walmart.com" + url
-
-                products.append({
-                    "title": title,
-                    "price": price,
-                    "image": image,
-                    "url": url
-                })
-
-            except Exception:
-                continue
-
-        return products
-
-    def close(self):
-
-        self.context.close()
-        self.playwright.stop()
+    def _normalize_url(self, url: str | None) -> str | None:
+        if not url:
+            return url
+        if url.startswith("/"):
+            return "https://www.walmart.com" + url
+        return url
